@@ -4,3 +4,7 @@ run:
 
 compile:
 	v src/main.v
+
+build:
+	mkdir -p bin
+	v -o bin/d src
