@@ -17,8 +17,7 @@ fn main() {
 	dice_size := 1 + os.args[3].int()
 
 	for i in 0 .. set_size {
-		println("Set ${i + 1}")
-		print("Roll: ")
+		print("Set ${i + 1}: ")
 		mut rolls := []int{}
 		for _ in 0 .. pool_size {
 			a_roll := roll(dice_size)
@@ -28,7 +27,7 @@ fn main() {
 		total := arrays.sum(rolls) or { panic(err) }
 		roll_list := arrays.join_to_string(rolls, ', ', fn(i int) string { return i.str() })
 
-		println("(${total}) ${roll_list}")
+		println("Total: ${total} (${roll_list})")
 	}
 }
 
